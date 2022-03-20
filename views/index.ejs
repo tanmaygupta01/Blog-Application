@@ -1,0 +1,42 @@
+<%- include("./partials/header")%>
+
+    <main>
+        <section class="border-bottom border-dark py-5" style="background-color: #b2d7f1;">
+            <div class="row container">
+                <div class="col-lg-6 ps-5">
+                    <h1 class="display-2">Stay curious.</h1>
+                    <p class="fw-bold">Discover stories, thinking, and expertise from writers on any topic.</p>
+                </div>
+                <div class="col-lg-6">
+
+                </div>
+            </div>
+        </section>
+
+        <section class="container mt-5">
+            <% for(let blog of allBlogs){ %>
+                <a href="/blogs/<%=blog.id%> " class="text-decoration-none text-dark">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="<%=blog.img%> " class="img-fluid rounded-start h-100" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%=blog.title%>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%=blog.desc.substring(0,80)%>
+                                    </p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <%}%>
+        </section>
+
+    </main>
+    <%- include("./partials/footer")%>
