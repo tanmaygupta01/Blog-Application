@@ -5,6 +5,10 @@ const connectDB = require('./db')
 const Blog = require('./models/blog')
 const methodOverride = require('method-override')
 
+var moment = require('moment');
+var shortDateFormat = "ddd @ h:mmA"; // this is just an example of storing a date format once so you can change it in one place and have it propagate
+app.locals.moment = moment; // this makes moment available as a variable in every EJS page
+app.locals.shortDateFormat = shortDateFormat;
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));

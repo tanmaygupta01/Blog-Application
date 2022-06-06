@@ -29,7 +29,7 @@
                                     <p class="card-text">
                                         <%=blog.desc.substring(0,80)%>
                                     </p>
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    <p class="card-text"><small class="text-muted">Last updated <%=moment(Date()).format(shortDateFormat)%></small></p>
                                 </div>
                             </div>
                         </div>
